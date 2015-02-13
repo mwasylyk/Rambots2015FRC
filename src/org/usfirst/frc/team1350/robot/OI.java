@@ -14,15 +14,20 @@ public class OI {
     // One type of button is a joystick button which is any button on a joystick.
     // You create one by telling it which joystick it's on and which button
     // number it is.
-     static Joystick leftStick = new Joystick(RobotMap.JOYSTICK_LEFT_PORT);
-     static Joystick rightStick = new Joystick(RobotMap.JOYSTICK_RIGHT_PORT);
+     public Joystick leftStick;
+     public Joystick rightStick;
      
-     public static double getLeftSpeed() {
-    	 return leftStick.getMagnitude();
+     private static OI instance;
+     public static OI getInstance(){
+    	 if(instance == null) {
+    		 instance = new OI();
+    	 }
+    	 return instance;
      }
-     
-     public static double getRightSpeed() {
-    	 return rightStick.getMagnitude();
+     private OI(){
+    	 System.out.println("Creating OI instance");
+    	 leftStick = new Joystick(RobotMap.JOYSTICK_LEFT_PORT);
+    	 rightStick = new Joystick(RobotMap.JOYSTICK_RIGHT_PORT);
      }
      
     // Button button = new JoystickButton(stick, buttonNumber);

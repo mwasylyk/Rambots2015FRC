@@ -5,11 +5,9 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-
 import org.usfirst.frc.team1350.robot.commands.ExampleCommand;
 import org.usfirst.frc.team1350.robot.commands.TeleOPTankDrive;
 import org.usfirst.frc.team1350.robot.subsystems.Drivetrain;
-import org.usfirst.frc.team1350.robot.subsystems.ExampleSubsystem;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -22,7 +20,7 @@ public class Robot extends IterativeRobot {
 
 	//public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
 	public static OI oi;
-	private static final Drivetrain teleOPDrive = new Drivetrain();
+	public static Drivetrain drivetrain;
 
     Command autonomousCommand;
 
@@ -31,9 +29,12 @@ public class Robot extends IterativeRobot {
      * used for any initialization code.
      */
     public void robotInit() {
-		oi = new OI();
+		oi = OI.getInstance();
+		drivetrain.init();
+		
         // instantiate the command used for the autonomous period
         //autonomousCommand = new ExampleCommand();
+		
     }
 	
 	public void disabledPeriodic() {
@@ -58,8 +59,8 @@ public class Robot extends IterativeRobot {
         // teleop starts running. If you want the autonomous to 
         // continue until interrupted by another command, remove
         // this line or comment it out.
-        if (autonomousCommand != null) autonomousCommand.cancel();
-        teleOPDrive.initDefaultCommand();
+        //if (autonomousCommand != null) autonomousCommand.cancel();
+    	//teleOPDrive.initDefaultCommand();
     }
 
     /**

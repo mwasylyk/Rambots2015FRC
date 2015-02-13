@@ -1,6 +1,7 @@
 package org.usfirst.frc.team1350.robot.commands;
 
 import org.usfirst.frc.team1350.robot.OI;
+import org.usfirst.frc.team1350.robot.Robot;
 import org.usfirst.frc.team1350.robot.subsystems.Drivetrain;
 
 import edu.wpi.first.wpilibj.command.Command;
@@ -10,12 +11,22 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class TeleOPTankDrive extends Command {
 	
-	private static Drivetrain drivetrain = new Drivetrain();
+	private static TeleOPTankDrive instance;
+	public static TeleOPTankDrive getInstance() {
+		if(instance == null) {
+			instance = new TeleOPTankDrive();
+		}
+		return instance;
+	}
 	
-    public TeleOPTankDrive() {
+	static final double speed = 1;
+	static boolean squaredInputs = false;
+	
+    private TeleOPTankDrive() {
+    	
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-    	requires(drivetrain);
+    	requires(Robot.drivetrain);
     }
 
     // Called just before this Command runs the first time
@@ -24,7 +35,7 @@ public class TeleOPTankDrive extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	drivetrain.tankDrive(OI.getLeftSpeed(), OI.getRightSpeed());
+    	Robot.drivetrain.tankDrive(getLeftSpeed(), getRightSpeed(), squaredInputs);
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -39,5 +50,13 @@ public class TeleOPTankDrive extends Command {
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+    }
+    
+    public static double getLeftSpeed() {
+   	 return (Robot.oi.leftStick.getY())*speed;
+    }
+    
+    public static double getRightSpeed() {
+   	 return (Robot.oi.rightStick.getY())*speed;
     }
 }

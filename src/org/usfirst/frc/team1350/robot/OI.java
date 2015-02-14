@@ -1,9 +1,12 @@
 package org.usfirst.frc.team1350.robot;
 
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
-import org.usfirst.frc.team1350.robot.commands.ExampleCommand;
+import static org.usfirst.frc.team1350.robot.RobotMap.*;
+
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -16,7 +19,12 @@ public class OI {
     // number it is.
      public Joystick leftStick;
      public Joystick rightStick;
-     
+     public Button upCrateButton;
+     public Button upBinButton;
+     public Button downButton;
+     public DigitalInput topLimitSwitch;
+     public DigitalInput bottomLimitSwitch;
+
      private static OI instance;
      public static OI getInstance(){
     	 if(instance == null) {
@@ -24,12 +32,29 @@ public class OI {
     	 }
     	 return instance;
      }
+
      private OI(){
     	 System.out.println("Creating OI instance");
-    	 leftStick = new Joystick(RobotMap.JOYSTICK_LEFT_PORT);
-    	 rightStick = new Joystick(RobotMap.JOYSTICK_RIGHT_PORT);
+    	 leftStick = new Joystick(JOYSTICK_LEFT_PORT);
+    	 rightStick = new Joystick(JOYSTICK_RIGHT_PORT);
+         upCrateButton = new JoystickButton(rightStick, LIFT_CRATE_UP_BUTTON);
+         upBinButton = new JoystickButton(rightStick, LIFT_BIN_UP_BUTTON);
+         downButton = new JoystickButton(rightStick, LIFT_DOWN_BUTTON);
+         topLimitSwitch = new DigitalInput(TOP_LIMIT_SWITCH);
+         bottomLimitSwitch = new DigitalInput(BOTTOM_LIMIT_SWITCH);
+
+         //upCrateButton.whenPressed();
+         //downButton.whenPressed();
+
      }
-     
+
+    public boolean isTopLimitHit(){
+        return !(topLimitSwitch.get());
+    }
+
+    public boolean isBottomLimitHit(){
+        return !(bottomLimitSwitch.get());
+    }
     // Button button = new JoystickButton(stick, buttonNumber);
     
     // There are a few additional built in buttons you can use. Additionally,

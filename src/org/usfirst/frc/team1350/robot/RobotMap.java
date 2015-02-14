@@ -6,6 +6,8 @@ package org.usfirst.frc.team1350.robot;
  * floating around.
  */
 public class RobotMap {
+    public static final int TOP_LIMIT_SWITCH = 0;
+    public static final int BOTTOM_LIMIT_SWITCH = 1;
     // For example to map the left and right motors, you could define the
     // following variables to use with your drivetrain subsystem.
     // public static int leftMotor = 1;
@@ -16,11 +18,18 @@ public class RobotMap {
     // public static int rangefinderPort = 1;
     // public static int rangefinderModule = 1;
 	
-	public static int DRIVE_TRAIN_LEFT_MOTOR_CONTROLLER = 0;
-	public static int DRIVE_TRAIN_RIGHT_MOTOR_CONTROLLER = 1;
-	
-	// USB PORT?
-	public static int JOYSTICK_LEFT_PORT = 0;
-	public static int JOYSTICK_RIGHT_PORT = 1;
+	public static final int DRIVE_TRAIN_LEFT_MOTOR_CONTROLLER = 0;
+	public static final int DRIVE_TRAIN_RIGHT_MOTOR_CONTROLLER = 1;
+
+    public static final int LIFT_MOTOR = 3;
+
+    public static final int LIFT_CRATE_UP_BUTTON = 1;
+    public static final int LIFT_BIN_UP_BUTTON = 1;
+    public static final int LIFT_DOWN_BUTTON = 2;
+
+
+    // USB PORT?
+	public static final int JOYSTICK_LEFT_PORT = 0;
+	public static final int JOYSTICK_RIGHT_PORT = 1;
 
 }

@@ -5,9 +5,8 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-import org.usfirst.frc.team1350.robot.commands.ExampleCommand;
-import org.usfirst.frc.team1350.robot.commands.TeleOPTankDrive;
 import org.usfirst.frc.team1350.robot.subsystems.Drivetrain;
+import org.usfirst.frc.team1350.robot.subsystems.Lift;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -21,6 +20,7 @@ public class Robot extends IterativeRobot {
 	//public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
 	public static OI oi;
 	public static Drivetrain drivetrain;
+    public static Lift lift;
 
     Command autonomousCommand;
 
@@ -31,7 +31,7 @@ public class Robot extends IterativeRobot {
     public void robotInit() {
 		oi = OI.getInstance();
 		drivetrain.init();
-		
+		lift.init();
         // instantiate the command used for the autonomous period
         //autonomousCommand = new ExampleCommand();
 		

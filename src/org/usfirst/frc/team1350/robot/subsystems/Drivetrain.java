@@ -1,12 +1,10 @@
 package org.usfirst.frc.team1350.robot.subsystems;
 
-import org.usfirst.frc.team1350.robot.OI;
-import org.usfirst.frc.team1350.robot.RobotMap;
-import org.usfirst.frc.team1350.robot.commands.TeleOPTankDrive;
-
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import org.usfirst.frc.team1350.robot.RobotMap;
+import org.usfirst.frc.team1350.robot.commands.TeleOPTankDrive;
 
 
 /**
@@ -36,7 +34,7 @@ public class Drivetrain extends Subsystem {
     // here. Call these from Commands.
 
 	public void init() {
-		getInstance();
+		//getInstance();
 		tankDrive = TeleOPTankDrive.getInstance();
 		leftMotorController =  new Talon(RobotMap.DRIVE_TRAIN_LEFT_MOTOR_CONTROLLER);
 		rightMotorController  = new Talon(RobotMap.DRIVE_TRAIN_RIGHT_MOTOR_CONTROLLER);

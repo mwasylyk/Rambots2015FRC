@@ -30,7 +30,9 @@ public class Robot extends IterativeRobot {
      */
     public void robotInit() {
 		oi = OI.getInstance();
+        drivetrain = Drivetrain.getInstance();
 		drivetrain.init();
+        lift = Lift.getInstance();
 		lift.init();
         // instantiate the command used for the autonomous period
         //autonomousCommand = new ExampleCommand();

@@ -1,10 +1,12 @@
 package org.usfirst.frc.team1350.robot;
 
+import org.usfirst.frc.team1350.robot.commands.HomeLift;
+import org.usfirst.frc.team1350.robot.commands.LiftBin;
+
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-
 import static org.usfirst.frc.team1350.robot.RobotMap.*;
 
 
@@ -35,6 +37,11 @@ public class OI {
 
      private OI(){
     	 System.out.println("Creating OI instance");
+
+
+     }
+     
+     public void init(){
     	 leftStick = new Joystick(JOYSTICK_LEFT_PORT);
     	 rightStick = new Joystick(JOYSTICK_RIGHT_PORT);
          upCrateButton = new JoystickButton(rightStick, LIFT_CRATE_UP_BUTTON);
@@ -43,17 +50,17 @@ public class OI {
          topLimitSwitch = new DigitalInput(TOP_LIMIT_SWITCH);
          bottomLimitSwitch = new DigitalInput(BOTTOM_LIMIT_SWITCH);
 
-         //upCrateButton.whenPressed();
-         //downButton.whenPressed();
-
+         
+         upCrateButton.whenPressed(new LiftBin());
+         //downButton.whenPressed(new HomeLift());
      }
 
     public boolean isTopLimitHit(){
-        return !(topLimitSwitch.get());
+        return (topLimitSwitch.get());
     }
 
     public boolean isBottomLimitHit(){
-        return !(bottomLimitSwitch.get());
+        return (bottomLimitSwitch.get());
     }
     // Button button = new JoystickButton(stick, buttonNumber);
     

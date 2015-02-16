@@ -30,6 +30,7 @@ public class Robot extends IterativeRobot {
      */
     public void robotInit() {
 		oi = OI.getInstance();
+		oi.init();
         drivetrain = Drivetrain.getInstance();
 		drivetrain.init();
         lift = Lift.getInstance();

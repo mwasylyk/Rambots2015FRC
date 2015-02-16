@@ -1,6 +1,7 @@
 package org.usfirst.frc.team1350.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+
 import org.usfirst.frc.team1350.robot.OI;
 import org.usfirst.frc.team1350.robot.Robot;
 import org.usfirst.frc.team1350.robot.subsystems.Lift;
@@ -9,32 +10,37 @@ import org.usfirst.frc.team1350.robot.subsystems.Lift;
  * Created by mwasylyk on 2/14/15.
  */
 public abstract class AbstractLiftObject extends Command {
-
-    private Lift liftInstance;
-    private static OI oi;
+	
+    protected Lift liftInstance;
+    protected static OI oi;
+    
+    public AbstractLiftObject(){
+        liftInstance = Lift.getInstance();     
+        oi = OI.getInstance();
+        requires(liftInstance);
+    }
 
     @Override
     protected void initialize() {
-        liftInstance =  Robot.lift;
-        oi = OI.getInstance();
-        requires(liftInstance);
         setTimeout(getLiftTime());
     }
 
     @Override
     protected void execute() {
-        if(!oi.isTopLimitHit()) {
-            liftInstance.moveLiftUp(getLiftSpeed());
-        } else {
-            liftInstance.stopLift();
+        if(isLimitHit()) {
+        	liftInstance.stopLift();
             cancel();
             setTimeout(0);
+        } else {
+        	commandToRun();
         }
     }
+    
+    abstract void commandToRun();
 
     @Override
     protected boolean isFinished() {
-        return Robot.oi.isTopLimitHit() || isTimedOut();
+        return isLimitHit() || isTimedOut();
     }
 
     @Override
@@ -54,4 +60,5 @@ public abstract class AbstractLiftObject extends Command {
 
     abstract double getLiftTime();
     abstract double getLiftSpeed();
+    abstract boolean isLimitHit();
 }

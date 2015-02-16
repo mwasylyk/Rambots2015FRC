@@ -1,26 +1,21 @@
 package org.usfirst.frc.team1350.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+
 import org.usfirst.frc.team1350.robot.OI;
 import org.usfirst.frc.team1350.robot.subsystems.Lift;
 
 /**
  * Created by mwasylyk on 2/14/15.
  */
-public class HomeLift extends Command {
+public class HomeLift extends AbstractLiftObject {
 
     private static Lift liftInstance;
     private static OI oi;
 
     private static final double homeLiftSpeed = 0.35;
+    private static final double homeTime = 5;
 
-    @Override
-    protected void initialize() {
-        liftInstance = Lift.getInstance();
-        oi = OI.getInstance();
-        requires(liftInstance);
-        setTimeout(10); // backop timeout
-    }
 
     @Override
     protected void execute() {
@@ -41,4 +36,28 @@ public class HomeLift extends Command {
     protected void interrupted() {
 
     }
+
+	@Override
+	double getLiftTime() {
+		// TODO Auto-generated method stub
+		return homeTime;
+	}
+
+	@Override
+	double getLiftSpeed() {
+		// TODO Auto-generated method stub
+		return homeLiftSpeed;
+	}
+
+	@Override
+	boolean isLimitHit() {
+		// TODO Auto-generated method stub
+		return oi.isBottomLimitHit();
+	}
+	
+	@Override
+	void commandToRun() {
+		// TODO Auto-generated method stub
+		liftInstance.lowerLift(homeLiftSpeed);
+	}
 }

@@ -21,11 +21,11 @@ public class RobotMap {
 	public static final int DRIVE_TRAIN_LEFT_MOTOR_CONTROLLER = 0;
 	public static final int DRIVE_TRAIN_RIGHT_MOTOR_CONTROLLER = 1;
 
-    public static final int LIFT_MOTOR = 3;
+    public static final int LIFT_MOTOR = 2;
 
-    public static final int LIFT_CRATE_UP_BUTTON = 1;
-    public static final int LIFT_BIN_UP_BUTTON = 1;
-    public static final int LIFT_DOWN_BUTTON = 2;
+    public static final int LIFT_CRATE_UP_BUTTON = 6;
+    public static final int LIFT_BIN_UP_BUTTON = 7;
+    public static final int LIFT_DOWN_BUTTON = 8;
 
 
     // USB PORT?

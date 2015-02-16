@@ -36,8 +36,8 @@ public class Drivetrain extends Subsystem {
 	public void init() {
 		//getInstance();
 		tankDrive = TeleOPTankDrive.getInstance();
-		leftMotorController =  new Talon(RobotMap.DRIVE_TRAIN_LEFT_MOTOR_CONTROLLER);
-		rightMotorController  = new Talon(RobotMap.DRIVE_TRAIN_RIGHT_MOTOR_CONTROLLER);
+		leftMotorController = new Talon(RobotMap.DRIVE_TRAIN_LEFT_MOTOR_CONTROLLER);
+		rightMotorController = new Talon(RobotMap.DRIVE_TRAIN_RIGHT_MOTOR_CONTROLLER);
 		robotDrive = new RobotDrive(leftMotorController, rightMotorController);
 	}
 	

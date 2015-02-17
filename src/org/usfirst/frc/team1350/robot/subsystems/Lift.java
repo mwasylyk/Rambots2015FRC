@@ -38,8 +38,9 @@ public class Lift extends Subsystem{
     }
 
     public void stopLift(){
-        liftMotor.stopMotor();
         liftMotor.set(0);
+        liftMotor.stopMotor();
+
     }
 
 }

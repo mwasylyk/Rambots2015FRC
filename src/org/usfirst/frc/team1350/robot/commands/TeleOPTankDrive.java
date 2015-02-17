@@ -20,7 +20,7 @@ public class TeleOPTankDrive extends Command {
 	}
 	
 	static final double speed = 1;
-	static boolean squaredInputs = false;
+	static boolean squaredInputs = true;
 	
     private TeleOPTankDrive() {
     	

@@ -7,8 +7,8 @@ import org.usfirst.frc.team1350.robot.OI;
  */
 public class LiftBin extends AbstractLiftObject {
 
-    private static final double liftTime = 3;
-    private static final double liftSpeed = .65;
+    private static final double liftTime = 1;
+    private static final double liftSpeed = .7;
     
     private static LiftBin instance;
     public static LiftBin getInstance(){

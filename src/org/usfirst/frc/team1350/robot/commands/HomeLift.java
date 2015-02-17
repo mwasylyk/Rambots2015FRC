@@ -10,17 +10,8 @@ import org.usfirst.frc.team1350.robot.subsystems.Lift;
  */
 public class HomeLift extends AbstractLiftObject {
 
-    private static Lift liftInstance;
-    private static OI oi;
-
-    private static final double homeLiftSpeed = 0.35;
+    private static final double homeLiftSpeed = 0.25;
     private static final double homeTime = 5;
-
-
-    @Override
-    protected void execute() {
-        liftInstance.lowerLift(homeLiftSpeed);
-    }
 
     @Override
     protected boolean isFinished() {

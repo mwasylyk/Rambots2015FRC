@@ -1,10 +1,5 @@
 package org.usfirst.frc.team1350.robot.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
-
-import org.usfirst.frc.team1350.robot.OI;
-import org.usfirst.frc.team1350.robot.subsystems.Lift;
-
 /**
  * Created by mwasylyk on 2/14/15.
  */

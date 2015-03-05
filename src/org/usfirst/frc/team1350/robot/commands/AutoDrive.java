@@ -25,7 +25,7 @@ public class AutoDrive extends Command {
     }
 
     protected void initialize() {
-    	setTimeout(1);
+    	setTimeout(driveTime);
     }
 
     protected void execute() {

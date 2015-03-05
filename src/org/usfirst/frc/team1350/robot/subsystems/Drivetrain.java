@@ -32,9 +32,7 @@ public class Drivetrain extends Subsystem {
 	
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
-
 	public void init() {
-		//getInstance();
 		tankDrive = TeleOPTankDrive.getInstance();
 		leftMotorController = new Talon(RobotMap.DRIVE_TRAIN_LEFT_MOTOR_CONTROLLER);
 		rightMotorController = new Talon(RobotMap.DRIVE_TRAIN_RIGHT_MOTOR_CONTROLLER);
@@ -43,7 +41,6 @@ public class Drivetrain extends Subsystem {
 	
 	@Override
     public void initDefaultCommand() {
-        // Set the default command for a subsystem here.
         setDefaultCommand(tankDrive);
     }
     

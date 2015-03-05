@@ -1,7 +1,5 @@
 package org.usfirst.frc.team1350.robot.commands;
 
-import org.usfirst.frc.team1350.robot.OI;
-
 /**
  * Created by mwasylyk on 2/14/15.
  */

@@ -1,9 +1,6 @@
 package org.usfirst.frc.team1350.robot.commands;
 
-import org.usfirst.frc.team1350.robot.OI;
 import org.usfirst.frc.team1350.robot.Robot;
-import org.usfirst.frc.team1350.robot.subsystems.Drivetrain;
-
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
@@ -23,9 +20,6 @@ public class TeleOPTankDrive extends Command {
 	static boolean squaredInputs = true;
 	
     private TeleOPTankDrive() {
-    	
-        // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
     	requires(Robot.drivetrain);
     }
 

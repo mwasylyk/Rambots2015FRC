@@ -3,7 +3,6 @@ package org.usfirst.frc.team1350.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 
 import org.usfirst.frc.team1350.robot.OI;
-import org.usfirst.frc.team1350.robot.Robot;
 import org.usfirst.frc.team1350.robot.subsystems.Lift;
 
 /**

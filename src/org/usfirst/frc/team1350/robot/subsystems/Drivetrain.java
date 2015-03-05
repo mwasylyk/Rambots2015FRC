@@ -50,6 +50,10 @@ public class Drivetrain extends Subsystem {
     public void tankDrive(double left, double right, boolean squaredInput) {
     	robotDrive.tankDrive(left, right, squaredInput);
     }
+    
+    public void autoDrive(double speed){
+    	robotDrive.drive(speed, 0.0);
+    }
 
 }
 

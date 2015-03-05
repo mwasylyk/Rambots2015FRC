@@ -5,6 +5,8 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+
+import org.usfirst.frc.team1350.robot.commands.AutonomousPickup;
 import org.usfirst.frc.team1350.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team1350.robot.subsystems.Lift;
 
@@ -17,7 +19,6 @@ import org.usfirst.frc.team1350.robot.subsystems.Lift;
  */
 public class Robot extends IterativeRobot {
 
-	//public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
 	public static OI oi;
 	public static Drivetrain drivetrain;
     public static Lift lift;
@@ -35,9 +36,8 @@ public class Robot extends IterativeRobot {
 		drivetrain.init();
         lift = Lift.getInstance();
 		lift.init();
-        // instantiate the command used for the autonomous period
-        //autonomousCommand = new ExampleCommand();
-		
+        
+		autonomousCommand = new AutonomousPickup();
     }
 	
 	public void disabledPeriodic() {
@@ -45,16 +45,16 @@ public class Robot extends IterativeRobot {
 	}
 
     public void autonomousInit() {
-        // schedule the autonomous command (example)
-        //if (autonomousCommand != null) autonomousCommand.start();
+    	if(autonomousCommand !=null){
+    		autonomousCommand.start();
+    	}
     }
 
     /**
      * This function is called periodically during autonomous
      */
     public void autonomousPeriodic() {
-    	// Required for autonomous 
-        //Scheduler.getInstance().run();
+        Scheduler.getInstance().run();
     }
 
     public void teleopInit() {
@@ -62,8 +62,9 @@ public class Robot extends IterativeRobot {
         // teleop starts running. If you want the autonomous to 
         // continue until interrupted by another command, remove
         // this line or comment it out.
-        //if (autonomousCommand != null) autonomousCommand.cancel();
-    	//teleOPDrive.initDefaultCommand();
+        if (autonomousCommand != null){
+        	autonomousCommand.cancel();
+        }
     }
 
     /**

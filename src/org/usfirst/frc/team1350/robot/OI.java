@@ -21,8 +21,9 @@ public class OI {
     // number it is.
      public Joystick leftStick;
      public Joystick rightStick;
+     public Joystick liftController;
      public Button upCrateButton;
-     public Button upBinButton;
+//     public Button upBinButton;
      public Button downButton;
      public DigitalInput topLimitSwitch;
      public DigitalInput bottomLimitSwitch;
@@ -42,9 +43,10 @@ public class OI {
      public void init(){
     	 leftStick = new Joystick(JOYSTICK_LEFT_PORT);
     	 rightStick = new Joystick(JOYSTICK_RIGHT_PORT);
-         upCrateButton = new JoystickButton(rightStick, LIFT_CRATE_UP_BUTTON);
-         upBinButton = new JoystickButton(rightStick, LIFT_BIN_UP_BUTTON);
-         downButton = new JoystickButton(rightStick, LIFT_DOWN_BUTTON);
+    	 liftController = new Joystick(LIFT_CONTROLLER);
+         upCrateButton = new JoystickButton(liftController, LIFT_CRATE_UP_BUTTON);
+//         upBinButton = new JoystickButton(rightStick, LIFT_BIN_UP_BUTTON);
+         downButton = new JoystickButton(liftController, LIFT_DOWN_BUTTON);
          topLimitSwitch = new DigitalInput(TOP_LIMIT_SWITCH);
          bottomLimitSwitch = new DigitalInput(BOTTOM_LIMIT_SWITCH);
 

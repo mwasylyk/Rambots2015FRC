@@ -3,6 +3,8 @@ package org.usfirst.frc.team1350.robot.subsystems;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
+
+import org.usfirst.frc.team1350.robot.Log;
 import org.usfirst.frc.team1350.robot.RobotMap;
 import org.usfirst.frc.team1350.robot.commands.TeleOPTankDrive;
 
@@ -22,7 +24,7 @@ public class Drivetrain extends Subsystem {
 	}
 	
 	private Drivetrain() {
-		System.out.println("Initializing singleton of: " + this.getClass().getCanonicalName());
+		Log.info("Initializing singleton of: " + this.getClass().getCanonicalName());
 	}
 	
 	private TeleOPTankDrive tankDrive;

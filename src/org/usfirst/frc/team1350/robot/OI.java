@@ -37,7 +37,7 @@ public class OI {
      }
 
      private OI(){
-    	 System.out.println("Creating OI instance");
+    	 Log.info("Creating OI instance");
      }
      
      public void init(){

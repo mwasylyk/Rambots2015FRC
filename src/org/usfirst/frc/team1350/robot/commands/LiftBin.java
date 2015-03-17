@@ -5,8 +5,8 @@ package org.usfirst.frc.team1350.robot.commands;
  */
 public class LiftBin extends AbstractLiftObject {
 
-    private static final double liftTime = 1;
-    private static final double liftSpeed = .7;
+    private static final double liftTime = 1.5;
+    private static final double liftSpeed = 1;
     
     private static LiftBin instance;
     public static LiftBin getInstance(){

@@ -5,8 +5,8 @@ package org.usfirst.frc.team1350.robot.commands;
  */
 public class HomeLift extends AbstractLiftObject {
 
-    private static final double homeLiftSpeed = 0.25;
-    private static final double homeTime = 5;
+    private static final double homeLiftSpeed = 0.75;
+    private static final double homeTime = 2;
 
     @Override
     protected boolean isFinished() {

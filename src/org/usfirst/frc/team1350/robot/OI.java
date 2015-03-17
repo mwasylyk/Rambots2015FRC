@@ -53,6 +53,7 @@ public class OI {
          
          upCrateButton.whenPressed(new LiftBin());
          downButton.whenPressed(new HomeLift());
+         //upCrateButton.whileActive(new LiftBin());
      }
 
     public boolean isTopLimitHit(){

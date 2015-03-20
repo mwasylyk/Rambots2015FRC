@@ -6,6 +6,7 @@ import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 import org.usfirst.frc.team1350.robot.RobotMap;
+import org.usfirst.frc.team1350.robot.commands.ResetLiftHome;
 
 /**
  * Created by mwasylyk on 2/13/15.

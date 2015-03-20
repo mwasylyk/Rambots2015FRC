@@ -11,11 +11,6 @@ public class HomeLift extends AbstractLiftObject {
     private static final int ENCODER_LIMIT = 2;
 
     @Override
-    protected boolean isFinished() {
-        return oi.isBottomLimitHit() || isTimedOut();
-    }
-
-    @Override
     protected void end() {
         liftInstance.stopLift();
     }

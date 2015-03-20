@@ -26,7 +26,7 @@ public abstract class AbstractLiftObject extends Command {
 
     @Override
     protected void execute() {
-        if(isLimitHit() || isEncLimitReached()) {
+        if(isEncLimitReached() || isLimitHit()) {
         	liftInstance.stopLift();
             cancel();
             setTimeout(0);

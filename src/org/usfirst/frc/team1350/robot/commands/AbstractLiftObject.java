@@ -37,7 +37,7 @@ public abstract class AbstractLiftObject extends Command {
     
     @Override
     protected boolean isFinished() {
-        return isLimitHit() || isTimedOut();
+        return isLimitHit() || isTimedOut() || isEncLimitReached();
     }
 
     @Override

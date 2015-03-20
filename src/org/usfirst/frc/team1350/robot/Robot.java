@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
-import org.usfirst.frc.team1350.robot.commands.AutonomousPickup;
+import org.usfirst.frc.team1350.robot.commands.autonomous.AutonomousPickup;
 import org.usfirst.frc.team1350.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team1350.robot.subsystems.Lift;
 

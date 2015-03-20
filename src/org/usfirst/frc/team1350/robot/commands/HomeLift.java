@@ -7,6 +7,8 @@ public class HomeLift extends AbstractLiftObject {
 
     private static final double homeLiftSpeed = 0.75;
     private static final double homeTime = 2;
+    
+    private static final int ENCODER_LIMIT = 2;
 
     @Override
     protected boolean isFinished() {
@@ -25,25 +27,26 @@ public class HomeLift extends AbstractLiftObject {
 
 	@Override
 	double getLiftTime() {
-		// TODO Auto-generated method stub
 		return homeTime;
 	}
 
 	@Override
 	double getLiftSpeed() {
-		// TODO Auto-generated method stub
 		return homeLiftSpeed;
 	}
 
 	@Override
 	boolean isLimitHit() {
-		// TODO Auto-generated method stub
 		return oi.isBottomLimitHit();
 	}
 	
 	@Override
 	void commandToRun() {
-		// TODO Auto-generated method stub
 		liftInstance.lowerLift(homeLiftSpeed);
+	}
+
+	@Override
+	boolean isEncLimitReached() {
+		return liftInstance.getEncoderCount() <= ENCODER_LIMIT;
 	}
 }

@@ -26,7 +26,7 @@ public abstract class AbstractLiftObject extends Command {
 
     @Override
     protected void execute() {
-        if(isLimitHit()) {
+        if(isLimitHit() || isEncLimitReached()) {
         	liftInstance.stopLift();
             cancel();
             setTimeout(0);
@@ -35,8 +35,6 @@ public abstract class AbstractLiftObject extends Command {
         }
     }
     
-    abstract void commandToRun();
-
     @Override
     protected boolean isFinished() {
         return isLimitHit() || isTimedOut();
@@ -57,7 +55,9 @@ public abstract class AbstractLiftObject extends Command {
 
     }
 
+    abstract void commandToRun();
     abstract double getLiftTime();
     abstract double getLiftSpeed();
     abstract boolean isLimitHit();
+    abstract boolean isEncLimitReached();
 }

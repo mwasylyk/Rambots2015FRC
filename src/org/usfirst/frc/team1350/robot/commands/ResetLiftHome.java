@@ -6,7 +6,7 @@ package org.usfirst.frc.team1350.robot.commands;
 public class ResetLiftHome extends AbstractLiftObject {
 	
 	private static final double liftTime = 1.5;
-	private static final double liftSpeed = -.5;
+	private static final double liftSpeed = .5;
 
 	//Singleton
 	private static ResetLiftHome instance;
@@ -23,7 +23,7 @@ public class ResetLiftHome extends AbstractLiftObject {
 
 	@Override
 	void commandToRun() {
-			liftInstance.lowerLift(liftSpeed);
+		liftInstance.lowerLift(liftSpeed);
 	}
 
 	@Override

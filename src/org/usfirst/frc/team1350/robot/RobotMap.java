@@ -24,7 +24,7 @@ public class RobotMap {
 	public static final int JOYSTICK_RIGHT_PORT = 1;
 	
 	//Lift encoder
-	public static final int LIFT_ENCODER1 = 4;
-	public static final int LIFT_ENCODER2 = 5;
+	//public static final int LIFT_ENCODER1 = 2;
+	//public static final int LIFT_ENCODER2 = 3;
 
 }

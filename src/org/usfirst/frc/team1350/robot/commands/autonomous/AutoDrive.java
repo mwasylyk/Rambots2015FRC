@@ -9,8 +9,8 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class AutoDrive extends Command {
 	
-	private static final double speed = 1.8;
-	private static final double driveTime = 1.55;
+	private static final double speed = 1.5;
+	private static final double driveTime = 1.3;
 	
 	private static AutoDrive instance;
 	public static AutoDrive getInstance(){
